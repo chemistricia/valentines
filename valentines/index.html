@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style/css/styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Dear Lee Wen Hao Eugene</h1>
+                <h1 class = "header_text">Will you be my Valentine's?</h1>
+            </div>
+            <div class="image">
+                <img id="imge" src="./images/1.PNG">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onclick="changeImage()">No</button>
+                <script>
+                    var currentIndex = 1;
+                    var noButtonPhrases = [
+                        "Pwease",
+                        "Pretty pwease",
+                        "Are you sure?",
+                        "Reaaally sure?",
+                        "Last chance!!"
+                    ];
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function changeImage() {
+                        var img = document.getElementById("imge");
+                        currentIndex = (currentIndex % 5) + 1; // Cycle through images 1 to 5
+                        img.src = "./images/" + currentIndex + ".PNG";
+
+                        noButton.textContent = noButtonPhrases[currentIndex-1];
+                    }
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
